@@ -5,13 +5,28 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "prebuild": "node scripts/validate-posts.mjs && node scripts/generate-site-data.mjs",
+    "postbuild": "pagefind --site out --output-subdir pagefind && node scripts/ensure-cname.mjs",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "upload:image": "node scripts/upload-image.mjs",
+    "mcp:serve": "node packages/blog-mcp/index.mjs"
   },
   "dependencies": {
+    "@giscus/react": "^3.1.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "gray-matter": "^4.0.3",
+    "minio": "^8.0.7",
     "next": "16.2.3",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "react-markdown": "^10.1.0",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -19,6 +34,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
+    "pagefind": "^1.5.2",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
