@@ -5,6 +5,7 @@ This repository is a complete static blog stack with:
 - Next.js App Router static export (`output: "export"`)
 - GitHub Actions deployment to GitHub Pages
 - Custom domain support
+- Pages CMS visual editor (no self-hosted backend)
 - MinIO image upload helper
 - Pagefind full-text search
 - Giscus comments
@@ -21,7 +22,12 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## 2) Content workflow
 
-Write posts in `content/posts/*.md` with frontmatter:
+You can publish in two ways:
+
+1. Visual editing with Pages CMS (recommended): use [pagescms.org](https://pagescms.org/) and connect this repository.
+2. Local Markdown editing: write posts in `content/posts/*.md`.
+
+Markdown frontmatter format:
 
 ```md
 ---
@@ -32,6 +38,9 @@ summary: One-line summary
 published: true
 ---
 ```
+
+Pages CMS config is stored in `.pages.yml` at repository root.
+Detailed setup: `docs/pages-cms-setup.md`.
 
 ## 3) Build pipeline
 

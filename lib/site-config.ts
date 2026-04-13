@@ -1,5 +1,5 @@
 export const siteConfig = {
-  title: "MCell Blog",
+  title: "LOUO Blog",
   description:
     "Personal blog built with Next.js static export, Pagefind search, Giscus comments, and MCP integration.",
   author: "Your Name",

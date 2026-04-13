@@ -111,7 +111,7 @@ fs.mkdirSync(ARTICLES_DIRECTORY, { recursive: true });
 
 const siteInfo = {
   generatedAt,
-  title: "MCell Blog",
+  title: "LOUO Blog",
   description:
     "Personal blog built with Next.js static export, Pagefind search, Giscus comments, and MCP integration.",
   siteUrl,

@@ -4,7 +4,7 @@ export const SiteHeader = () => (
   <header className="site-header">
     <div className="site-header__inner">
       <Link className="site-header__brand" href="/">
-        <strong>MCell</strong> Blog
+        LOUO Blog
       </Link>
       <nav className="site-nav">
         <Link href="/posts">Posts</Link>

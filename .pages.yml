@@ -1,0 +1,62 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: content/posts
+    filename:
+      template: "{primary}.md"
+      field: create
+    view:
+      primary: title
+      fields: [title, date, published, tags]
+      sort: [date, title]
+      search: [title, summary, tags]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: date
+        label: Date
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: tags
+        label: Tags
+        type: select
+        options:
+          multiple: true
+          creatable: true
+      - name: summary
+        label: Summary
+        type: text
+        options:
+          rows: 3
+      - name: cover
+        label: Cover
+        type: image
+      - name: published
+        label: Published
+        type: boolean
+        default: true
+      - name: body
+        label: Body
+        type: rich-text
+        options:
+          format: markdown
+          path: posts
+          rename: safe
+
+settings:
+  commit:
+    templates:
+      create: "Create {path} (via Pages CMS)"
+      update: "Update {path} (via Pages CMS)"
+      delete: "Delete {path} (via Pages CMS)"
+      rename: "Rename {oldPath} to {newPath} (via Pages CMS)"
